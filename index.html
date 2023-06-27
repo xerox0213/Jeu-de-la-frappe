@@ -17,16 +17,30 @@
       <h1 class="title">Jeu de la frappe ⌨️</h1>
       <p class="info">Appuyez sur <span>"Echap"</span> pour lancer / relancer une partie.</p>
       <div class="indicator-game">
-        <div class="timer">
+        <div class="timer-indicator">
           <div class="gradient-bg gradient-bg-blue"></div>
           <div class="gradient-bg gradient-bg-red"></div>
-          Temps : 60
+          <span class="timer-value">Temps : 60</span>
         </div>
-        <div class="score">Score : 0</div>
+        <div class="score-indicator">Score : 0</div>
       </div>
-      <textarea class="textarea"></textarea>
-      <p class="quote">💡 Salut tous le monde</p>
+      <textarea class="textarea" readonly></textarea>
+      <div class="quote">
+        💡
+        <p class="content-quote"></p>
+      </div>
+    </div>
+    <div class="toast-notification">
+      🛰️ Une erreur est survenue
+      <button class="close-btn">
+        <ion-icon name="close"></ion-icon>
+      </button>
     </div>
     <script src="dist/app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

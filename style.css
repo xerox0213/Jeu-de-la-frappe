@@ -14,9 +14,10 @@ body {
 .game-container {
   background-color: #111;
   color: white;
-  width: 800px;
+  max-width: 800px;
+  width: 90%;
   padding: 20px;
-  margin: 50px auto 0px;
+  margin: 70px auto 0px;
   border-radius: 10px;
 }
 
@@ -46,8 +47,8 @@ body {
   margin-bottom: 50px;
 }
 
-.timer,
-.score {
+.timer-indicator,
+.score-indicator {
   padding: 10px;
   border-radius: 3px;
   font-weight: 700;
@@ -57,7 +58,7 @@ body {
   background-image: linear-gradient(to right, #333, #222);
 }
 
-.timer {
+.timer-indicator {
   position: relative;
   transform: translate(0);
   overflow: hidden;
@@ -81,11 +82,11 @@ body {
   background-image: linear-gradient(to right, orange, crimson);
 }
 
-.timer.active .gradient-bg-blue {
+.timer-indicator.active .gradient-bg-blue {
   animation: inversionbg 1s ease-in-out 0s infinite alternate;
 }
 
-.timer.active .gradient-bg-red {
+.timer-indicator.active .gradient-bg-red {
   animation: inversionbg 1s ease-in-out 0s infinite alternate-reverse;
 }
 
@@ -105,7 +106,52 @@ body {
 }
 
 .quote {
+  display: flex;
   font-size: 18px;
+}
+
+.wrong {
+  background-color: crimson;
+}
+
+.correct {
+  background-color: rgb(188, 188, 27);
+}
+
+.toast-notification {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  width: max-content;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  border: 2px solid lightgray;
+  transition: .2s ease opacity, 0s .2s ease visibility;
+}
+
+.toast-notification.active {
+  opacity: 1;
+  visibility: visible;
+  transition: 0s ease visibility, 0.2s ease opacity;
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: lightgray;
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @keyframes inversionbg {
